@@ -1,54 +1,78 @@
-# NewsletterGen Crew
+# Newsletter Generator
 
-Welcome to the NewsletterGen Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+This project provides a streamlined solution for generating personalized newsletters by automating research, editing, and formatting tasks. The system is powered by a modular architecture, including tools for gathering content, editing, and assembling newsletters into a polished HTML format. A user-friendly GUI built with Streamlit allows users to interact seamlessly with the system.
+
+## Features
+- **Research Automation**: Fetch the latest news based on a specified topic.
+- **Editing Support**: Edit and reorder articles to improve readability and engagement.
+- **HTML Newsletter Compilation**: Generate visually appealing newsletters using a predefined HTML template.
+- **Custom Tools**: Leverage APIs for searching content and finding related articles.
+- **Streamlit GUI**: Simplify interaction with an intuitive sidebar interface.
+
+## Project Structure
+```
+.env
+.gitignore
+README.md
+requirements.txt
+pyproject.toml
+src/
+    gui/
+        __init__.py
+        app.py
+    newsletter_gen/
+        __init__.py
+        config/
+            agents.yaml
+            newsletter_template.html
+            tasks.yaml
+        crew.py
+        main.py
+        tools/
+            __init__.py
+            custom_tool.py
+```
+
+### Key Files
+- **`app.py`**: Defines the GUI for generating newsletters.
+- **`agents.yaml`**: Configures the roles and goals of the researcher, editor, and designer agents.
+- **`tasks.yaml`**: Details the tasks for researching, editing, and compiling the newsletter.
+- **`custom_tool.py`**: Implements tools for searching and retrieving content using APIs.
 
 ## Installation
 
-Ensure you have Python >=3.10 <=3.13 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd newsletter-generator
+   ```
 
-First, if you haven't already, install uv:
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-```bash
-pip install uv
-```
+3. Set up environment variables:
+   - Create a `.env` file in the root directory.
+   - Add your `EXA_API_KEY` for using the custom tools.
+   - Add your `OPENAI_API_KEY` for using the agents.
 
-Next, navigate to your project directory and install the dependencies:
+## Usage
 
-(Optional) Lock the dependencies and install them by using the CLI command:
-```bash
-crewai install
-```
-### Customizing
+1. **Run the GUI**:
+   ```bash
+   streamlit run src/gui/app.py
+   ```
 
-**Add your `OPENAI_API_KEY` into the `.env` file**
+2. **Generate Newsletter**:
+   - Enter the topic and a personal message in the sidebar.
+   - Click "Generate the newsletter" to start the process.
+   - Download the generated HTML file.
 
-- Modify `src/newsletter_gen/config/agents.yaml` to define your agents
-- Modify `src/newsletter_gen/config/tasks.yaml` to define your tasks
-- Modify `src/newsletter_gen/crew.py` to add your own logic, tools and specific args
-- Modify `src/newsletter_gen/main.py` to add custom inputs for your agents and tasks
-
-## Running the Project
-
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
-
-```bash
-$ crewai run
-```
-
-This command initializes the newsletter-gen Crew, assembling the agents and assigning them tasks as defined in your configuration.
-
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
-
-## Understanding Your Crew
-
-The newsletter-gen Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
-
-## Support
-
-For support, questions, or feedback regarding the NewsletterGen Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
-
-Let's create wonders together with the power and simplicity of crewAI.
+## Configuration
+- **HTML Template**:
+  Update `src/newsletter_gen/config/newsletter_template.html` to change the design of the newsletter.
+- **Agent Behavior**:
+  Modify `src/newsletter_gen/config/agents.yaml` to customize the roles and behavior of the system agents.
+- **Task Instructions**:
+  Update `src/newsletter_gen/config/tasks.yaml` for new or refined workflows.
