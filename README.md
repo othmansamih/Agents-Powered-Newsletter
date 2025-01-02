@@ -1,6 +1,6 @@
 # Newsletter Generator
 
-![Crewai-Newsletter-Image](https://github.com/othmansamih/Agents-Powered-Newsletter/tree/main/assets/crewai-newsletter.png)
+![Crewai-Newsletter-Image](https://github.com/othmansamih/Agents-Powered-Newsletter/blob/main/assets/crewai-newsletter.png)
 This project provides a streamlined solution for generating personalized newsletters by automating research, editing, and formatting tasks. The system is powered by a modular architecture, including tools for gathering content, editing, and assembling newsletters into a polished HTML format. A user-friendly GUI built with Streamlit allows users to interact seamlessly with the system.
 
 ## Features
