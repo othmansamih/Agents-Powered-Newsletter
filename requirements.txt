@@ -1,5 +1,5 @@
 crewai==0.86.0
 exa_py==1.7.1
 streamlit==1.41.1
-sqlite3>=3.35.0
+pysqlite3==0.5.4
 -e ./src
