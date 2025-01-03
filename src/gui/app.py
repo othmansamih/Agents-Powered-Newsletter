@@ -1,9 +1,5 @@
-__import__('pysqlite3')
-import sys
 from newsletter_gen.crew import NewsletterGen
 import streamlit as st
-
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 class NewsletterGenUI:
     def load_html_template(self):
